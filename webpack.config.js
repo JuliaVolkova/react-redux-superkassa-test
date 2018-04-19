@@ -1,21 +1,16 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: './app/index.html',
-    filename: 'index.html',
-    inject: 'body'
-});
-
 module.exports = {
+    mode: 'development',
     entry: ['babel-polyfill', './app/src/index.js'],
     output: {
         path: path.resolve('dist'),
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        compress: true
     },
     module: {
         rules: [
@@ -37,5 +32,11 @@ module.exports = {
             }
         ]
     },
-    plugins: [HtmlWebpackPluginConfig]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './app/index.html',
+            filename: 'index.html',
+            inject: 'body'
+        })
+    ]
 };

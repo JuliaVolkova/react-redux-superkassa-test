@@ -2,5 +2,39 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: cornsilk;
+}
+
+.root {
+    height: 100%;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.awesomeButton {
+    width: 200px;
+    height: 100px;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
     background-color: darkmagenta;
+    border-radius: 15%;
+    outline: none;
+    border: 5px solid deeppink;
+    color: antiquewhite;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.awesomeButton:active,
+.awesomeButton:focus,
+.awesomeButton:hover {
+    background-color: deeppink;
+    border: 5px solid darkmagenta;
+    transform: translateY(4px);
 }
